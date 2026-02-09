@@ -63,5 +63,47 @@ It explains ~56% of the variability in **log(price)** while remaining simple and
 ## Tools & Packages
 - **R**
 - `GGally`, `car`, `performance`, `see`, `lmtest`, `MASS`, `leaps`, `reshape2`, `ggplot2`
+---
 
-## Project Structure
+## Results & Key Findings
+
+- The final model selected using the **BIC criterion** includes:
+  - `lotS`
+  - `age`
+  - `lValue`
+  - `lingA`
+  - `baths`
+
+- The model explains approximately **56% of the variability** in log(price).
+- `lingA` (living area) and `baths` (number of bathrooms) have the strongest positive impact on house price.
+- The variable `age` has a negative effect on price.
+- Adding a quadratic term for `lingA` significantly improved model performance (ΔAIC > 10).
+- Interaction effects were tested but did not significantly improve the final model.
+
+---
+
+## Prediction Example
+
+For a house with:
+
+- lotS = 1  
+- age = 25  
+- lValue = 14,000  
+- lingA = 1000  
+- baths = 1.5  
+
+Predicted price ≈ **$137,753**
+
+Prediction interval:
+- Lower bound ≈ $76,321  
+- Upper bound ≈ $248,635  
+
+---
+
+## How to Run
+
+1. Open R or RStudio.
+2. Install required packages (if needed):
+
+```r
+install.packages(c("GGally","car","performance","see","lmtest","MASS","leaps","reshape2","ggplot2"))
